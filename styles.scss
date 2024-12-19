@@ -1,0 +1,45 @@
+// Variáveis
+$primary-color: #ff0000;
+$text-color: #fff;
+$background-color: #000;
+
+// Mixins
+@mixin transition($property, $duration) {
+  transition: $property $duration ease;
+}
+
+// Estilos globais
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  background-image: url('assets/background-symbols.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+// Componentes
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.cta-button {
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  @include transition(background-color, 0.3s);
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
